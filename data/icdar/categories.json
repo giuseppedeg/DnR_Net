@@ -1,0 +1,124 @@
+{
+    "categories": [
+        {
+            "id": 7,
+            "name": "Θ",
+            "supercategory": "Greek"
+        },
+        {
+            "id": 8,
+            "name": "Α",
+            "supercategory": "Greek"
+        },
+        {
+            "id": 9,
+            "name": "Β",
+            "supercategory": "Greek"
+        },
+        {
+            "id": 14,
+            "name": "Τ",
+            "supercategory": "Greek"
+        },
+        {
+            "id": 17,
+            "name": "Ξ",
+            "supercategory": "Greek"
+        },
+        {
+            "id": 23,
+            "name": "Ε",
+            "supercategory": "Greek"
+        },
+        {
+            "id": 33,
+            "name": "Κ",
+            "supercategory": "Greek"
+        },
+        {
+            "id": 45,
+            "name": "Ω",
+            "supercategory": "Greek"
+        },
+        {
+            "id": 59,
+            "name": "Μ",
+            "supercategory": "Greek"
+        },
+        {
+            "id": 77,
+            "name": "Φ",
+            "supercategory": "Greek"
+        },
+        {
+            "id": 100,
+            "name": "Ρ",
+            "supercategory": "Greek"
+        },
+        {
+            "id": 107,
+            "name": "Π",
+            "supercategory": "Greek"
+        },
+        {
+            "id": 111,
+            "name": "Γ",
+            "supercategory": "Greek"
+        },
+        {
+            "id": 119,
+            "name": "Ν",
+            "supercategory": "Greek"
+        },
+        {
+            "id": 120,
+            "name": "Λ",
+            "supercategory": "Greek"
+        },
+        {
+            "id": 144,
+            "name": "Ζ",
+            "supercategory": "Greek"
+        },
+        {
+            "id": 150,
+            "name": "Η",
+            "supercategory": "Greek"
+        },
+        {
+            "id": 161,
+            "name": "Υ",
+            "supercategory": "Greek"
+        },
+        {
+            "id": 169,
+            "name": "Ψ",
+            "supercategory": "Greek"
+        },
+        {
+            "id": 177,
+            "name": "Χ",
+            "supercategory": "Greek"
+        },
+        {
+            "id": 186,
+            "name": "Δ",
+            "supercategory": "Greek"
+        },
+        {
+            "id": 201,
+            "name": "Ο",
+            "supercategory": "Greek"
+        },
+        {
+            "id": 212,
+            "name": "Ι",
+            "supercategory": "Greek"
+        },
+        {
+            "id": 225,
+            "name": "Ϲ",
+            "supercategory": "Greek"
+        }
+   ]
+}
