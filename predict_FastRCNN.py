@@ -38,6 +38,7 @@ add_custom_bt = True
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # Dataset
+assert os.path.exists(img_dirs), f"Image directory {img_dirs} does not exist."
 dataset_test = ImagesDataset(dataset_path=img_dirs, image_size=C.IMAGE_SIZE, transforms=None) 
 loader_test = DataLoader(dataset_test, shuffle=False, num_workers=1, persistent_workers=True, pin_memory=True, collate_fn=collate_fn, batch_size=1)
 
