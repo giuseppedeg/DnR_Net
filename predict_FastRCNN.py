@@ -48,7 +48,9 @@ categories = C.DECODING_CATEGORIES
 opts_chain = []
 
 # Resizer
-model = FasterRCNN_DR("resnet50", C.N_CLASSES, C.IMAGE_SIZE, dropout=C.DROPOUT)
+tmp_checkpoint = torch.load(C.CHECKPOINT_RESIZER, map_location='cpu', weights_only=False)
+n_classes_res = tmp_checkpoint['model']['network.roi_heads.box_predictor.cls_score.3.weight'].size(0) - 1
+model = FasterRCNN_DR("resnet50", n_classes_res, C.IMAGE_SIZE, dropout=C.DROPOUT)
 model.eval()
 resizer = Resizer(model, device, C.REF_BOX_HEIGHT)
 resizer.load_model_state(C.CHECKPOINT_RESIZER)
@@ -60,10 +62,6 @@ patchifier = Patchifier(patcher, device)
 opts_chain.append(patchifier)
 
 preprocesser = Preprocesser(opts_chain)
-
-
-## D&R Model
-model = FasterRCNN_DR(C.FRCNN_mod, C.N_CLASSES, image_size, dropout=C.DROPOUT)
 
 
 ids_image = {}
@@ -88,7 +86,10 @@ with torch.no_grad():
             original_images_shapes.append([3, img.size[1], img.size[0]])
 
         for model_weights in tqdm(os.listdir(checkpoints_dir), desc="Batch", leave=False, colour="GREEN", disable=C.DISABLE_TQDM):
+            torch.cuda.empty_cache()
             checkpoint = torch.load(os.path.join(checkpoints_dir, model_weights), weights_only=False)
+            n_classes_res = checkpoint['model']['network.roi_heads.box_predictor.cls_score.3.weight'].size(0) - 1
+            model = FasterRCNN_DR(C.FRCNN_mod, n_classes_res, image_size, dropout=C.DROPOUT)
             model.load_state_dict(checkpoint['model'])
             model.to(device).eval()
 
